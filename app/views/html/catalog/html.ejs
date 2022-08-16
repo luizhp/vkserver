@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Videokê - Catalog</title>
+  <link href="https://unpkg.com/gridjs/dist/theme/mermaid.min.css" rel="stylesheet" />
+  <link href="css/main.css" rel="stylesheet">
+</head>
+
+<body>
+  <div id="wrapper"></div>
+</body>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://unpkg.com/gridjs/dist/gridjs.umd.js"></script>
+<script type="text/javascript" src="js/vendor/jquery/jquery-custom.js"></script>
+
+<script>
+  new gridjs.Grid({
+    columns: ["id", "singer", "title"],
+    server: {
+      url: '/songs',
+      then: data => data.map(card => [card.id, card.singer, card.title])
+    }
+  }).render(document.getElementById("wrapper"));
+</script>
+
+</html>

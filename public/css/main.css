@@ -9,52 +9,5 @@ body {
   background-repeat: no-repeat;
   background-size: auto;
   background-position: right 10px top;
-}
-
-.keypad {
-  color: red !important;
-  font-weight: bolder !important;
-  font-size: 50px !important;
-}
-
-.keypadmask {
-  background-color: rgb(237, 216, 234);
-  padding: 10px;
-}
-
-.cst {
-  position: absolute;
-  top: 30%;
-  left: 50%;
-  margin-right: -50%;
-  transform: translate(-50%, -50%);
-}
-
-.csb {
-  position: absolute;
-  bottom: 30%;
-  left: 50%;
-  margin-right: -50%;
-  transform: translate(-50%, -50%);
-}
-
-.bolder {
-  color: white;
-  font-weight: bolder;
-}
-
-#songselection {
-  width: 300px;
-}
-
-#songinfo {
-  font-size: 30px;
-  color: black;
-  background-color: white;
-  font-weight: bolder;
-  /* max-width: 500px; */
-  margin-top: 35px;
-  padding: 5px;
-  border: 1px solid white;
-  visibility: hidden;
+  background-attachment: fixed;
 }
