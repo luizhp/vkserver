@@ -26,9 +26,12 @@ var showSong = function (song) {
 };
 
 var closeSong = function () {
+  // $('#videoPlayer')[0].pause();
+  // // $('#videoPlayer').attr('src', 'javascript:;');
+  // $('#videoPlayer')[0].webkitExitFullscreen();
+   $('#videoPlayer').attr('src', '');
+   $('#videoPlayer')[0].load();
   $('#videoPlayer')[0].pause();
-  // $('#videoPlayer').attr('src', 'javascript:;');
-  $('#videoPlayer')[0].webkitExitFullscreen()
   $("#songsinger").text('');
   $("#songtitle").text('');
   setTimeout(function () {

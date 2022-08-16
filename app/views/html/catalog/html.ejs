@@ -14,18 +14,33 @@
   <div id="wrapper"></div>
 </body>
 
+<script type="module">
+  import {
+    Grid,
+    html
+  } from "https://unpkg.com/gridjs?module";
+</script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://unpkg.com/gridjs/dist/gridjs.umd.js"></script>
 <script type="text/javascript" src="js/vendor/jquery/jquery-custom.js"></script>
 
 <script>
   new gridjs.Grid({
-    columns: ["id", "singer", "title"],
+    columns: [
+      "id",
+      "singer",
+      "title",
+      {
+        name: 'id',
+        formatter: (cell) => `<center>${cell}</center>`
+      }
+    ],
     pagination: {
       limit: 15
     },
     search: true,
     sort: true,
+    fixedHeader: true,
     server: {
       url: '/songs',
       then: data => data.map(card => [card.id, card.singer, card.title])

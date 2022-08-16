@@ -5,7 +5,12 @@ database.sync({ force: false }).then(() => console.log('db is ready'));
 
 module.exports = function (app) {
   app.get('/songs', async (req, res) => {
-    const songs = await Song.findAll();
+    const songs = await Song.findAll({
+      order: [
+        ['singer', 'asc'],
+        ['title', 'asc']
+      ]
+    });
     res.send(songs);
   });
 
