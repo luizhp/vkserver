@@ -17,7 +17,7 @@ module.exports = function (app) {
 
   app.get("/song/:id/video", function (req, res) {
     const requestedId = req.params.id;
-    const videoPath = `${process.cwd()}/videos/${requestedId.padStart(4, '0')}.mp4`
+    const videoPath = `${process.cwd()}/videos/${requestedId.padStart(5, '0')}.mp4`
     // Ensure there is a range given for the video
     const range = req.headers.range;
     if (!range) {
