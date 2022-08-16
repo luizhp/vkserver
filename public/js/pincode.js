@@ -7,10 +7,10 @@ var pincodeCreate = function () {
     // hide digits like password input
     hidedigits: false,
 
-    // 4 input boxes = code of 4 digits long
-    inputs: 5,
+    // 6 input boxes = code of 6 digits long
+    inputs: 6,
 
-    placeholders: '🎵 ♩ ♭ 🎶 ♮',
+    placeholders: '♩ ♩ ♩ ♩ ♩ ♩',
 
     // keyDown callback
     keydown: function (e) {

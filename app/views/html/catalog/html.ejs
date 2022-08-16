@@ -21,6 +21,11 @@
 <script>
   new gridjs.Grid({
     columns: ["id", "singer", "title"],
+    pagination: {
+      limit: 15
+    },
+    search: true,
+    sort: true,
     server: {
       url: '/songs',
       then: data => data.map(card => [card.id, card.singer, card.title])

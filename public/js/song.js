@@ -1,4 +1,4 @@
-var songnumber = Array.apply(null, Array(5)).map(function () { });
+var songnumber = Array.apply(null, Array(6)).map(function () { });
 
 var getSongNumber = (function () {
   return songnumber.reduce((acc, el) => acc += el || '');
