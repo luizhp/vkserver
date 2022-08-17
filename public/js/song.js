@@ -21,6 +21,7 @@ var getSong = function (id, cb) {
 
 var showSong = function (song) {
   $('#videoPlayer').attr('src', `/song/${song.id}/video`);
+  $('#videoPlayer')[0].load();
   $("#songsinger").text(song.singer);
   $("#songtitle").text(song.title);
   $('#mdlInfo').modal('show');
@@ -32,8 +33,8 @@ var closeSong = function () {
   // $('#videoPlayer')[0].pause();
   // // $('#videoPlayer').attr('src', 'javascript:;');
   $('#videoPlayer')[0].webkitExitFullscreen();
-  $('#videoPlayer').attr('src', '');
-  $('#videoPlayer')[0].load();
+  // $('#videoPlayer').attr('src', '');
+  // $('#videoPlayer')[0].load();
   $('#videoPlayer')[0].pause();
   $("#songsinger").text('');
   $("#songtitle").text('');
