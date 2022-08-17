@@ -19,3 +19,10 @@ $('#videoPlayer').keyup(function (e) {
     closeSong();
   }
 });
+
+
+videoPlayer.addEventListener('fullscreenchange', (event) => {
+  if (!document.fullscreenElement) {
+    closeSong();
+  }
+});
