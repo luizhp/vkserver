@@ -4,7 +4,7 @@ services:
     build: .
     working_dir: /usr/src/vkserver
     volumes:
-      - "/mnt/videoke/:/usr/src/vkserver/app/videos/"
+      - "/mnt/videoke/:/usr/src/vkserver/videos/"
     container_name: app-vkserver
     restart: always
     ports:
