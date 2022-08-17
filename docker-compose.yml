@@ -5,6 +5,7 @@ services:
     working_dir: /usr/src/vkserver
     volumes:
       - "/mnt/videoke/:/usr/src/vkserver/videos/"
+      - "/etc/localtime:/etc/localtime:ro"
     container_name: app-vkserver
     restart: always
     ports:
