@@ -2,9 +2,9 @@ version: '3'
 services:
   app:
     build: .
+    working_dir: /usr/src/vkserver
     volumes:
-      - ./app/:/app/
-      - /mnt/videoke/:/app/videos/
+      - "/mnt/videoke/:/usr/src/vkserver/app/videos/"
     container_name: app-vkserver
     restart: always
     ports:
