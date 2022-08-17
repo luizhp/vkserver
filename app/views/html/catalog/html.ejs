@@ -11,15 +11,15 @@
 </head>
 
 <body>
-  <div id="wrapper"></div>
+  <div style="width: 50%" id="wrapper"></div>
 </body>
 
-<script type="module">
+<!-- <script type="module">
   import {
     Grid,
     html
   } from "https://unpkg.com/gridjs?module";
-</script>
+</script> -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://unpkg.com/gridjs/dist/gridjs.umd.js"></script>
 <script type="text/javascript" src="js/vendor/jquery/jquery-custom.js"></script>
@@ -31,8 +31,9 @@
       "singer",
       "title",
       {
-        name: 'id',
-        formatter: (cell) => `<center>${cell}</center>`
+        name: 'select',
+        formatter: (_, row) => gridjs.html(`<center>${row.cells[0].data}</center>`)
+        //formatter: (cell) => `<center>${cell}</center>`
       }
     ],
     pagination: {

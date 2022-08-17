@@ -45,7 +45,7 @@ var pincodeCreate = function () {
 
 var pincodeClear = function () {
   $('#chooseid').pincodeInput().data('plugin_pincodeInput').clear();
-  songnumber = Array.apply(null, Array(5)).map(function () { });
+  songnumber = Array.apply(null, Array(6)).map(function () { });
 };
 
 var pincodeFocus = function () {

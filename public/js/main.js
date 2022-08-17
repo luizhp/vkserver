@@ -1,6 +1,6 @@
-pincodeCreate();
-pincodeFocus();
+// pincodeCreate();
+// pincodeFocus();
 
-$('body').click(function () {
-  pincodeFocus();
-});
+// $('body').click(function () {
+//   pincodeFocus();
+// });

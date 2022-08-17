@@ -1,8 +1,8 @@
-var songnumber = Array.apply(null, Array(6)).map(function () { });
+// var songnumber = Array.apply(null, Array(6)).map(function () { });
 
-var getSongNumber = (function () {
-  return songnumber.reduce((acc, el) => acc += el || '');
-});
+// var getSongNumber = (function () {
+//   return songnumber.reduce((acc, el) => acc += el || '');
+// });
 
 var getSong = function (id, cb) {
   $.ajax({
@@ -10,7 +10,10 @@ var getSong = function (id, cb) {
     dataType: 'application/json',
     complete: function (data) {
       if (data.responseText) {
-        cb(JSON.parse(data.responseText));
+        var jsSong = JSON.parse(data.responseText);
+        if (jsSong["id"]) {
+          cb(JSON.parse(data.responseText));
+        }
       }
     }
   });
@@ -28,15 +31,15 @@ var showSong = function (song) {
 var closeSong = function () {
   // $('#videoPlayer')[0].pause();
   // // $('#videoPlayer').attr('src', 'javascript:;');
-  // $('#videoPlayer')[0].webkitExitFullscreen();
-   $('#videoPlayer').attr('src', '');
-   $('#videoPlayer')[0].load();
+  $('#videoPlayer')[0].webkitExitFullscreen();
+  $('#videoPlayer').attr('src', '');
+  $('#videoPlayer')[0].load();
   $('#videoPlayer')[0].pause();
   $("#songsinger").text('');
   $("#songtitle").text('');
   setTimeout(function () {
     $('#mdlInfo').modal('hide');
-    pincodeClear();
-    pincodeFocus();
+    // pincodeClear();
+    // pincodeFocus();
   }, 500);
 };
