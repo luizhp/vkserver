@@ -24,5 +24,16 @@ new gridjs.Grid({
   server: {
     url: '/songs',
     then: data => data.map(card => [card.id, card.singer, card.title])
+  },
+  language: {
+    'search': {
+      'placeholder': '🔍 Search song...'
+    },
+    'pagination': {
+      'previous': '⬅️',
+      'next': '➡️',
+      'showing': '',
+      'results': () => 'songs'
+    }
   }
 }).render(document.getElementById("wrapper"));
