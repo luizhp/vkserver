@@ -2,9 +2,6 @@
 require('console-stamp')(console, 'yyyy-mm-dd HH:MM:ss.l-03:00');
 var morgan = require('morgan');
 
-// require('console-stamp')(console, {  format: ':date(yyyy/mm/dd HH:MM:ss.l)' });
-
-//var localtimestamp = () => new Date().toISOString();
 var toIsoString = function (date) {
   var tzo = -date.getTimezoneOffset(),
     dif = tzo >= 0 ? '+' : '-',
@@ -25,17 +22,12 @@ var toIsoString = function (date) {
 
 module.exports = function (app) {
 
+  app.enable("trust proxy");
+
   morgan.token('localtimestamp', function getId (req) {
     return toIsoString(new Date());
   })
 
-  // app.use(function (req, res, next) {
-  //   req.localtimestamp = localtimestamp();
-  //   return next();
-  // });
-
-  // app.use(morgan('combined'))
-  //app.use(morgan("[:date[iso]] [LOG] :method :url :status :res[content-length] - :remote-addr - :response-time ms"))
   app.use(morgan("[:localtimestamp] [LOG]   :method :url :status :res[content-length] - :remote-addr - :response-time ms"))
 
   return app;
