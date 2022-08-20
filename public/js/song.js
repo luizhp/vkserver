@@ -1,9 +1,3 @@
-// var songnumber = Array.apply(null, Array(6)).map(function () { });
-
-// var getSongNumber = (function () {
-//   return songnumber.reduce((acc, el) => acc += el || '');
-// });
-
 var getSong = function (id, cb) {
   $.ajax({
     url: '/song/' + id,
@@ -30,17 +24,11 @@ var showSong = function (song) {
 };
 
 var closeSong = function () {
-  // $('#videoPlayer')[0].pause();
-  // // $('#videoPlayer').attr('src', 'javascript:;');
   $('#videoPlayer')[0].webkitExitFullscreen();
-  // $('#videoPlayer').attr('src', '');
-  // $('#videoPlayer')[0].load();
   $('#videoPlayer')[0].pause();
   $("#songsinger").text('');
   $("#songtitle").text('');
   setTimeout(function () {
     $('#mdlInfo').modal('hide');
-    // pincodeClear();
-    // pincodeFocus();
   }, 500);
 };
