@@ -20,14 +20,16 @@ module.exports = function () {
   }));
   // app.use(expressValidator());
 
+  app = require('./logger.js')(app);
+
   load({
     cwd: 'app'
   })
 //    .include('infra')
 //    .include('models')
     .include('controllers')
-//    .include('services')
-//    .include('data')
+    //    .include('services')
+    //    .include('data')
     .into(app);
 
   // app.use(function (req, res, next) {
