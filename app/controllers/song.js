@@ -17,6 +17,9 @@ module.exports = function (app) {
   app.get('/song/:id', async (req, res) => {
     const requestedId = req.params.id;
     const song = await Song.findOne({ where: { id: requestedId } });
+    if (song) {
+      console.log(`song: ${song.id.toString().padStart(5, '0')} - ${song.singer} - ${song.title}`);
+    }
     res.send(song);
   });
 

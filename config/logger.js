@@ -36,7 +36,7 @@ module.exports = function (app) {
   // })
   morgan.token('localtimestamp', (req) => new Date().toISOString());
 
-  app.use(morgan("[:localtimestamp] [LOG]   :method :url :status :res[content-length] - :remote-addr - :response-time ms"))
+  app.use(morgan("[:localtimestamp] :method :url :status :res[content-length] - :remote-addr - :response-time ms"))
 
   return app;
 }
