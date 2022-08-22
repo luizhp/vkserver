@@ -6,7 +6,7 @@ var getSong = function (id, cb) {
       if (data.responseText) {
         var jsSong = JSON.parse(data.responseText);
         if (jsSong["id"]) {
-          cb(JSON.parse(data.responseText));
+          cb(jsSong);
         }
       }
     }

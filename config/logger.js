@@ -1,5 +1,13 @@
 // add timestamps in front of log messages
-require('console-stamp')(console, 'yyyy-mm-dd HH:MM:ss.l-03:00');
+//require('console-stamp')(console, 'yyyy-mm-dd HH:MM:ss.l-03:00');
+//require('console-stamp')(console, "yyyy-mm-dd'T'HH:MM:ss'Z'");
+// require('console-stamp')(console, {
+//   format: ":date(UTC:yyyy-mm-dd'T'HH:MM:ss'Z', true)"
+// });
+// require('console-stamp')(console, {
+//   format: ":date(UTC:yyyy-mm-dd'ABCDEFGHIJKLMNOPQRSTUVWXYZ'HH:MM:ss'Z', true)"
+// });
+require('log-timestamp');
 var morgan = require('morgan');
 
 var toIsoString = function (date) {
@@ -21,12 +29,12 @@ var toIsoString = function (date) {
 };
 
 module.exports = function (app) {
-
   app.enable("trust proxy");
 
-  morgan.token('localtimestamp', function getId (req) {
-    return toIsoString(new Date());
-  })
+  // morgan.token('localtimestamp', function getId (req) {
+  //   return toIsoString(new Date().toISOString());
+  // })
+  morgan.token('localtimestamp', (req) => new Date().toISOString());
 
   app.use(morgan("[:localtimestamp] [LOG]   :method :url :status :res[content-length] - :remote-addr - :response-time ms"))
 
