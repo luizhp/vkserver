@@ -14,20 +14,17 @@ var getSong = function (id, cb) {
 };
 
 var showSong = function (song) {
-  $('#videoPlayer').attr('src', `/song/${song.id}/video`);
-  $('#videoPlayer')[0].load();
-  $("#songsinger").text(song.singer);
-  $("#songtitle").text(song.title);
+  var video = $('#videoPlayer');
+  video.attr('src', `/song/${song.id}/video`);
+  video[0].load();
   $('#mdlInfo').modal('show');
-  $('#videoPlayer')[0].requestFullscreen();
-  $('#videoPlayer')[0].play();
+  video[0].requestFullscreen();
+  video[0].play();
 };
 
 var closeSong = function () {
   $('#videoPlayer')[0].webkitExitFullscreen();
   $('#videoPlayer')[0].pause();
-  $("#songsinger").text('');
-  $("#songtitle").text('');
   setTimeout(function () {
     $('#mdlInfo').modal('hide');
   }, 500);

@@ -8,16 +8,15 @@ var server = http.listen(porta, function () {
   var port = server.address().port;
 
   console.log(`listening at http://${host}:${port}`);
-
 });
 
 process
   .on('SIGTERM', function () {
-    console.log("\nSIGTERM - Terminating");
+    console.log("SIGTERM - Terminating");
     process.exit(0);
   })
   .on('SIGINT', function () {
-    console.log("\nSIGINT - Terminating");
+    console.log("SIGINT - Terminating");
     process.exit(0);
   });
 

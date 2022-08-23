@@ -13,7 +13,7 @@ module.exports = function () {
   //aceitar conteúdos dos posts
   //urlencoded -> formulário html post
   //ou json -> post com json
-  //expressValidator
+  //expressValidator https://express-validator.github.io/docs/
   app.use(express.json())
   app.use(express.urlencoded({
     extended: true
@@ -25,8 +25,8 @@ module.exports = function () {
   load({
     cwd: 'app'
   })
-//    .include('infra')
-//    .include('models')
+    //    .include('infra')
+    //    .include('models')
     .include('controllers')
     //    .include('services')
     //    .include('data')

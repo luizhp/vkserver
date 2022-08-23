@@ -32,7 +32,7 @@ new gridjs.Grid({
   },
   language: {
     'search': {
-      'placeholder': '♫ Search song... ♫'
+      'placeholder': '♫ Search song...'
     },
     'pagination': {
       'previous': '⬅️',
