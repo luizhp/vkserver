@@ -25,7 +25,8 @@ var showSong = function (song) {
 var closeSong = function () {
   $('#videoPlayer')[0].webkitExitFullscreen();
   $('#videoPlayer')[0].pause();
-  setTimeout(function () {
-    $('#mdlInfo').modal('hide');
-  }, 500);
+  $('#mdlInfo').modal('hide');
+  // setTimeout(function () {
+  //   $('#mdlInfo').modal('hide');
+  // }, 500);
 };
