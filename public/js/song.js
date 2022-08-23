@@ -13,21 +13,19 @@ var getSong = function (id, cb) {
   });
 };
 
+var videoPlayer = $('#videoPlayer');
+
 var showSong = function (song) {
-  var videoPlayer = $('#videoPlayer');
   videoPlayer.attr('src', `/song/${song.id}/video`);
   videoPlayer[0].load();
   videoPlayer[0].requestFullscreen();
   videoPlayer[0].play();
-  $('#mdlInfo').modal('show');
   videoPlayer.visible();
+  videoPlayer.css('pointer-events', 'none');
 };
 
 var closeSong = function () {
-  var videoPlayer = $('#videoPlayer');
   videoPlayer.invisible();
-  $('#mdlInfo').modal('hide');
   videoPlayer[0].pause();
   videoPlayer[0].webkitExitFullscreen();
-  setTimeout(() => $('#mdlInfo').modal('hide'), 500);
 };
