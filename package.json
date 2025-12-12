@@ -1,14 +1,15 @@
 {
   "name": "vkserver",
   "version": "1.0.0",
-  "description": "",
+  "description": "Servidor de video VK",
   "main": "app.js",
   "directories": {
     "doc": "docs"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon -L --inspect=0.0.0.0 app.js"
+    "start": "node app.js",
+    "dev": "nodemon -L --inspect=0.0.0.0 app.js"
   },
   "author": "",
   "license": "ISC",
@@ -24,5 +25,8 @@
   },
   "devDependencies": {
     "nodemon": "^2.0.19"
+  },
+  "engines": {
+    "node": ">=16.0.0"
   }
 }
